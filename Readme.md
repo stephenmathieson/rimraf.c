@@ -15,6 +15,20 @@
 
   `rm -rf path`, returning 0 on success and -1 on failure
 
+## CLI
+
+  For extra fun, `rimraf(1)` can be built and installed:
+
+    $ git clone https://github.com/stephenmathieson/rimraf.c /tmp/rimraf
+    $ cd /tmp/rimraf
+    $ make install
+
+  Once installed, `rimraf(1)` allows for:
+
+    $ rimraf /tmp/rimraf
+    $ rimraf a b c d /foo/bar
+    $ sudo rimraf / # just kidding
+
 ## License
 
 (The MIT License)
