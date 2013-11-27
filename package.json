@@ -1,21 +1,15 @@
 {
   "name": "rimraf",
-  "version": "0.0.1",
+  "version": "temp-deps",
   "repo": "stephenmathieson/rimraf.c",
   "description": "rm -rf",
   "keywords": [ "rm", "rimraf", "unlink" ],
   "license": "MIT",
   "src": [
     "src/rimraf.c",
-    "src/rimraf.h",
-
-    "src/path-join.c",
-    "src/path-join.h",
-    "src/str-copy.c",
-    "src/str-copy.h",
-    "src/str-ends-with.c",
-    "src/str-ends-with.h",
-    "src/str-starts-with.c",
-    "src/str-starts-with.h"
-  ]
+    "src/rimraf.h"
+  ],
+  "dependencies": {
+    "stephenmathieson/path-join": "master"
+  }
 }
