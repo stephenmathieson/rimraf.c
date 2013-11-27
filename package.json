@@ -10,6 +10,6 @@
     "src/rimraf.h"
   ],
   "dependencies": {
-    "stephenmathieson/path-join": "master"
+    "stephenmathieson/path-join.c": "master"
   }
 }
