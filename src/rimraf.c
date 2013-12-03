@@ -8,6 +8,11 @@
 
 #define _POSIX_C_SOURCE 200809L
 
+// hack
+#ifndef S_IFDIR
+#define S_IFDIR 0040000
+#endif
+
 #include <dirent.h>
 #include <stdlib.h>
 #include <string.h>
