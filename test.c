@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <string.h>
-#include "src/rimraf.h"
-#include "src/path-join.h"
+#include "rimraf.h"
+#include "path-join.h"
 
 static bool exists(char *path) {
   struct stat b;

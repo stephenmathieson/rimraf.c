@@ -8,15 +8,14 @@
 
 #include <string.h>
 #include <stdlib.h>
-#include "str-copy.h"
 #include "str-ends-with.h"
 #include "str-starts-with.h"
 #include "path-join.h"
 
 #ifdef _WIN32
-#define SEPERATOR   "\\"
+#define PATH_JOIN_SEPERATOR   "\\"
 #else
-#define SEPERATOR   "/"
+#define PATH_JOIN_SEPERATOR   "/"
 #endif
 
 /*
@@ -25,18 +24,19 @@
 
 char *path_join(char *dir, char *file) {
   int size = strlen(dir) + strlen(file) + 2;
-  char *buf = (char *) malloc(size * sizeof(char));
+  char *buf = malloc(size * sizeof(char));
+  if (NULL == buf) return NULL;
 
   strcpy(buf, dir);
 
   // add the sep if necessary
-  if (!str_ends_with(dir, SEPERATOR)) {
-    strcat(buf, SEPERATOR);
+  if (!str_ends_with(dir, PATH_JOIN_SEPERATOR)) {
+    strcat(buf, PATH_JOIN_SEPERATOR);
   }
 
   // remove the sep if necessary
-  if (str_starts_with(file, SEPERATOR)) {
-    char *filecopy = str_copy(file);
+  if (str_starts_with(file, PATH_JOIN_SEPERATOR)) {
+    char *filecopy = strdup(file);
     filecopy++;
     strcat(buf, filecopy);
   } else {
