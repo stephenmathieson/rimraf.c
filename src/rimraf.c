@@ -18,7 +18,7 @@
  * rm -rf $path
  */
 
-int rimraf(char *path) {
+int rimraf(const char *path) {
   DIR *dir = opendir(path);
   if (NULL == dir) return -1;
 

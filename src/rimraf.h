@@ -12,6 +12,6 @@
 
 #define RIMRAF_VERSION "0.0.1"
 
-int rimraf(char *path);
+int rimraf(const char *path);
 
 #endif
