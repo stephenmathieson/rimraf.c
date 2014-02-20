@@ -18,14 +18,15 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include "path-join/path-join.h"
 #include "rimraf.h"
-#include "path-join.h"
 
 /*
  * rm -rf $path
  */
 
-int rimraf(const char *path) {
+int
+rimraf(const char *path) {
   DIR *dir = opendir(path);
   if (NULL == dir) return -1;
 

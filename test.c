@@ -5,15 +5,17 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <string.h>
+#include "path-join/path-join.h"
 #include "rimraf.h"
-#include "path-join.h"
 
-static bool exists(char *path) {
+static bool
+exists(char *path) {
   struct stat b;
   return 0 == (stat(path, &b));
 }
 
-static void test_setup() {
+static void
+test_setup() {
   char *dirs[] = {
     "./tmp",
     "./tmp/foo",
@@ -31,7 +33,8 @@ static void test_setup() {
 }
 
 
-int main(int argc, char **argv) {
+int
+main(void) {
   test_setup();
   assert(0 == rimraf("./tmp"));
   assert(false == exists("./tmp/foo/bar/baz/hello"));

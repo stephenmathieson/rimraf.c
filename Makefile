@@ -1,7 +1,7 @@
 
 PREFIX ?= /usr/local
 SOURCES = $(wildcard src/*.c)
-SOURCES += $(wildcard deps/*.c)
+SOURCES += $(wildcard deps/*/*.c)
 
 test: test.c $(SOURCES)
 	$(CC) -std=c99 $^ -o test -Isrc -Ideps

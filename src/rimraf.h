@@ -6,12 +6,12 @@
 // MIT licensed
 //
 
-
-#ifndef RIMRAF
-#define RIMRAF
+#ifndef RIMRAF_H
+#define RIMRAF_H
 
 #define RIMRAF_VERSION "0.0.1"
 
-int rimraf(const char *path);
+int
+rimraf(const char *);
 
 #endif
