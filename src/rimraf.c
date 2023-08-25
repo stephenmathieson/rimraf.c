@@ -39,13 +39,23 @@ rimraf(const char *path) {
     if (NULL == f) return -1;
 
     struct stat s;
-    if (0 != stat(f, &s)) return -1;
+    if (0 != stat(f, &s)) {
+      free(f);
+      return -1;
+    }
+
     if (s.st_mode & S_IFDIR) {
       // rimraf dirs
-      if (-1 == rimraf(f)) return -1;
+      if (-1 == rimraf(f)) {
+        free(f);
+        return -1;
+      }
     } else {
       // unlink files
-      if (-1 == unlink(f)) return -1;
+      if (-1 == unlink(f)) {
+        free(f);
+        return -1;
+      }
     }
     free(f);
   }
