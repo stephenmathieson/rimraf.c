@@ -26,9 +26,11 @@ test_setup() {
 
   for (int i = 0; dirs[i]; i++) {
     mkdir(dirs[i], 0777);
-    FILE *fp = fopen(path_join(dirs[i], "hello"), "w");
+    char *f = path_join(dirs[i], "hello");
+    FILE *fp = fopen(f, "w");
     fwrite("hello", 1, 5, fp);
     fclose(fp);
+    free(f);
   }
 }
 
